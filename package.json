@@ -5,14 +5,50 @@
   "main": "index.js",
   "scripts": {
     "build": "babel src -d dist --source-maps",
-    "serve": "NODE_ENV=production node dist/index.js",
-    "start": "NODE_ENV=development babel-node src/index.js",
-    "dev": "DEBUG=server:debug NODE_ENV=development nodemon src/index.js --exec babel-node",
-    "test": "DEBUG=server:debug NODE_ENV=test mocha --require babel-core/register --reporter spec --exit   tests/ --exec babel-node",
-    "test:watch": "DEBUG=server:debug NODE_ENV=development mocha  --require babel-core/register --watch --reporter  spec   tests/ --exec babel-node",
+    "serve": "cross-env NODE_ENV=production node dist/index.js",
+    "start": "cross-env NODE_ENV=development babel-node index.js",
+    "dev": "cross-env DEBUG=server:debug NODE_ENV=development nodemon index.js --exec babel-node",
+    "test": " cross-env DEBUG=server:debug NODE_ENV=test mocha --require babel-core/register --reporter spec --exit   tests/ --exec babel-node",
+    "test:watch": "cross-env DEBUG=server:debug NODE_ENV=development mocha  --require babel-core/register --watch --reporter  spec   tests/ --exec babel-node"
   },
   "author": "",
   "license": "ISC",
+  "babel": {
+    "presets": [
+      "node8"
+    ]
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "eslintConfig": {
+    "plugins": [
+      "node"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:node/recommended"
+    ],
+    "husky": {
+      "hooks": {
+        "pre-commit": "npm test",
+        "pre-push": "npm test",
+        "...": "..."
+      }
+    },
+    "rules": {
+      "node/no-unsupported-features/es-syntax": 0,
+      "node/no-unsupported-features/es-builtins": 0
+    },
+    "env": {
+      "node": true,
+      "es6": true
+    },
+    "parserOptions": {
+      "sourceType": "module",
+      "ecmaVersion": 2018
+    }
+  },
   "dependencies": {
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
@@ -20,8 +56,13 @@
     "mongoose": "^5.8.9"
   },
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "config": "^3.2.5",
+    "cross-env": "^7.0.0",
     "debug": "^4.1.1",
-    "mocha": "^7.0.0"
+    "husky": "^4.2.1",
+    "mocha": "^7.0.0",
+    "nodemon": "^2.0.2",
+    "babel-preset-node8": "^1.2.0"
   }
 }
