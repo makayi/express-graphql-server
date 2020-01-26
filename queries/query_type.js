@@ -1,6 +1,6 @@
 import {GraphQLObjectType, GraphQLInt, GraphQLList } from 'graphql'
-import postType from  './post_type';
-
+import postType from  '../types/post_type';
+import userType from  '../types/user_type';
 const posts = [
     {
       title: 'First post',
@@ -32,6 +32,15 @@ const queryType =  new GraphQLObjectType({
         resolve: () => {
           return posts
         }
+      },
+      user: {
+        type: userType,
+          args:{
+            id:{ type: GraphQLInt}
+          },
+          resolve:(source,{id})=>{
+            return {email:"test@gmail.com","firstname":"mbuyu",lastname:"makayi",password:"950390"}
+          }
       }
     }
   });

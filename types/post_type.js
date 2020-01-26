@@ -1,4 +1,4 @@
-import { GraphQLSchema, GraphQLObjectType, GraphQLString, GraphQLInt } from 'graphql';
+import {GraphQLObjectType, GraphQLString } from 'graphql';
 import authorType  from './author_type';
 
 
@@ -13,7 +13,6 @@ const authors = {
     }
   }
   
-
 const postType =  new GraphQLObjectType({
     name: 'Post',
     fields: {
