@@ -2,9 +2,9 @@ FROM node:10.13-alpine AS Builder
 ENV NODE_ENV production
 WORKDIR /usr/src/app
 COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
-RUN npm install  --silent && mv node_modules ../
-RUN npm run build
 COPY . .
+RUN npm install
+RUN npm run build
 EXPOSE 4000
 CMD npm run start
 
