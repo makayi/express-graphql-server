@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import product from "../models/product";
+import uuid from  'uuid';
 
 const seller = new Schema({
   firstname: {
@@ -18,7 +19,10 @@ const seller = new Schema({
     type: String,
     required: true
   },
-  products: [product]
+  seller_id:{
+    type:String,       
+    default:uuid.v1()
+  }
 });
 
-module.exports=mongoose.model('seller',seller)
+module.exports=mongoose.model('sellers',seller,'sellers')

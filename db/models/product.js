@@ -16,7 +16,8 @@ const product= new Schema({
     seller_id:{
         type:String,
         required:true
-    }
+    }, 
+
 });
 
 module.exports= mongoose.model("product",product);

@@ -2,6 +2,7 @@ import { GraphQLObjectType, GraphQLInt, GraphQLList } from "graphql";
 import userType from "../types/user_type";
 import sellerType from "../types/seller_type";
 import productType from "../types/product_type";
+import {getProducts} from '../../services/seller'
 
 const seller=
   {
@@ -23,25 +24,18 @@ const seller=
 const queryType = new GraphQLObjectType({
   name: "Query",
   fields: {
-    user: {
-      type: userType,
-      args: {
-        id: { type: GraphQLInt }
-      },
-      resolve: (source, { id }) => {
-        return {
-          email: "test@gmail.com",
-          firstname: "mbuyu",
-          lastname: "makayi",
-          password: "950390"
-        };
-      }
-    },
     seller: {
       type: sellerType,
       args: { id: { type: GraphQLInt } },
-      resolve: (source, { id }) => {
+      resolve:async (source, { id }) => {
         return seller;
+      }
+    },
+    sellers:{
+      type:  new GraphQLList(sellerType),
+      args: {limit: {type:GraphQLInt}},
+      resolve:async(source,{limit})=>{
+        return await getProducts();
       }
     }
   }

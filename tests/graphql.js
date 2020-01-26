@@ -1,22 +1,20 @@
-const {expect} = require('chai');
+const { expect } = require("chai");
 
-const server = require('../index');
-const request = require('supertest');
+const server = require("../index");
+const request = require("supertest");
 
-describe('GraphQL', () => {
-    it('Returns user with id = 10', (done) => {
-        // request(server).get('/graphql/')
-        // .send({ query: '{  posts { description} } '})
-        // .expect(200)
-        // .end((err,res) => {
-        //     // res will contain array with one user
-        //     if (err) return done(err);
-        //     expect(Array.isArray(res.body.posts))
-        //     expect(res.body.data).to.have.property('posts')
-        //     expect(res.body.data.posts[0]).to.have.property('description')
-        //     done();
-        // })
-    })
-
-    
+describe("GraphQL", () => {
+  it("Returns seller", done => {
+    request(server)
+      .get("/graphql/")
+      .send({ query: "{  seller { lastname,email,seller_name,products{name,price,description,seller_id }} } " })
+      .expect(200)
+      .end((err, res) => {
+        // res will contain array with one user
+        if (err) return done(err);
+        expect(Array.isArray(res.body.seller));
+        expect(res.body.data).to.have.property("seller");
+        done();
+      });
+  });
 });
