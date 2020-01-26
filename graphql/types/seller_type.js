@@ -1,7 +1,8 @@
 import {
   GraphQLObjectType,
   GraphQLString,
-  GraphQLList
+  GraphQLList,
+  GraphQLScalarType
 } from "graphql";
 import product_type from "./product_type";
 
@@ -21,7 +22,9 @@ const sellerType = new GraphQLObjectType({
     seller_name: {
       type: GraphQLString
     },
-    products: {type:new GraphQLList(product_type)}
+    seller_id:{
+      type: GraphQLString
+    }
   }
 });
 
