@@ -5,9 +5,14 @@ import {createSeller} from  '../../services/seller_service';
 
 const createSellerMutation={
     type: sellerType,
-    args:sellerInputType,
-    resolve: async (source, seller) => {
-      return await createSeller(seller);
+    args:{
+      input:{
+        type:sellerInputType
+      }
+    },
+    resolve: async (source, args) => {
+      console.log(args)
+      return await createSeller(args.input);
     }
   }
 
