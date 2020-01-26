@@ -7,7 +7,7 @@ import {
 } from "graphql";
 import sellerType from "../types/seller_type";
 import sellerInputType from  '../input_types/seller_input_type';
-import {createSeller} from  '../../services/seller';
+import {createSeller} from  '../../services/seller_service';
 
 const mutationType = new GraphQLObjectType({
   name: "Mutation",
