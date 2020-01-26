@@ -1,0 +1,13 @@
+version: '2.1'
+
+services:
+  graphql:
+    image: graphql
+    build: .
+    environment:
+      NODE_ENV: development
+    ports:
+      - 4000:4000
+      - 9229:9229
+    ## set your startup file here
+    command: node --inspect=0.0.0.0:9229 index.js
