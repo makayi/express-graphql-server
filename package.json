@@ -11,6 +11,13 @@
     "test": " cross-env DEBUG=server:debug NODE_ENV=test mocha --require babel-core/register --reporter spec --exit   tests/ --exec babel-node",
     "test:watch": "cross-env DEBUG=server:debug NODE_ENV=development mocha  --require babel-core/register --watch --reporter  spec   tests/ --exec babel-node"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test",
+      "pre-push": "npm run test",
+      "...": "..."
+    }
+  },
   "author": "",
   "license": "ISC",
   "babel": {
@@ -29,13 +36,6 @@
       "eslint:recommended",
       "plugin:node/recommended"
     ],
-    "husky": {
-      "hooks": {
-        "pre-commit": "npm run test",
-        "pre-push": "npm run test",
-        "...": "..."
-      }
-    },
     "rules": {
       "node/no-unsupported-features/es-syntax": 0,
       "node/no-unsupported-features/es-builtins": 0
