@@ -57,12 +57,14 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-preset-node8": "^1.2.0",
+    "chai": "^4.2.0",
     "config": "^3.2.5",
     "cross-env": "^7.0.0",
     "debug": "^4.1.1",
     "husky": "^4.2.1",
     "mocha": "^7.0.0",
     "nodemon": "^2.0.2",
-    "babel-preset-node8": "^1.2.0"
+    "supertest": "^4.0.2"
   }
 }
