@@ -1,12 +1,14 @@
 import {
-    GraphQLObjectType,
-    GraphQLInt,
-    GraphQLList,
-    GraphQLString,
-    GraphQLScalarType
-  } from "graphql";
+  GraphQLInputObjectType,
+  GraphQLInt,
+  GraphQLList,
+  GraphQLString,
+  GraphQLScalarType
+} from "graphql";
 
-  const sellerInputType= {
+const sellerInputType= new GraphQLInputObjectType({
+  name:"sellerInput",
+  fields:{
     firstname: {
       type: GraphQLString
     },
@@ -20,5 +22,6 @@ import {
       type: GraphQLString
     }
   }
+})
 
-  module.exports=sellerInputType;
+module.exports=sellerInputType; 

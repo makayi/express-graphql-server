@@ -11,7 +11,8 @@ const sellerType = new GraphQLObjectType({
   name: "seller",
   fields: {
     firstname: {
-      type: GraphQLString
+      type: GraphQLString,
+      description:"Name of the seller"
     },
     lastname: {
       type: GraphQLString
@@ -24,6 +25,9 @@ const sellerType = new GraphQLObjectType({
     },
     seller_id:{
       type: GraphQLString
+    },
+    _id:{
+      type:GraphQLString
     }
   }
 });

@@ -2,8 +2,7 @@ import Seller from "../db/models/seller";
 
 export async function getSellers() {
   try {
-    const results = await Seller.find({}).exec();
-    return results;
+    return await Seller.find({}).exec();
   } catch (error) {
     console.error(error.message);
     throw error;
@@ -13,8 +12,16 @@ export async function getSellers() {
 export async function createSeller(sellerInput) {
   try {
     const seller = new Seller(sellerInput);
-    const result = await seller.save();
-    return result;
+    return await seller.save();
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+}
+
+export async function deleteSeller({ _id }) {
+  try {
+    return await Seller.findOneAndDelete({ _id: _id }).exec();
   } catch (error) {
     console.log(error);
     throw error;

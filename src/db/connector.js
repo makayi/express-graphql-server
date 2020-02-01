@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
+import config from 'config';
 
-const URL = "mongodb://localhost:27017/ebuy";
 
-mongoose.connect(URL, {
+mongoose.connect(config.get('database_URL'), {
   useNewUrlParser: true
 });
 
