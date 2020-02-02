@@ -1,5 +1,5 @@
 import { GraphQLObjectType } from "graphql";
-import { createSellerMutation,deleteSellerMutation } from "../mutations/seller_mutations";
+import { createSellerMutation,deleteSellerMutation } from "./SellerMutations";
 
 const mutations = new GraphQLObjectType({
   name: "Mutation",

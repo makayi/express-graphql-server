@@ -1,4 +1,4 @@
-import Seller from "../db/models/seller";
+import Seller from "../db/models/Seller";
 
 export async function getSellers() {
   try {

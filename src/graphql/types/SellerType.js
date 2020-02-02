@@ -4,7 +4,7 @@ import {
   GraphQLList,
   GraphQLScalarType
 } from "graphql";
-import product_type from "./product_type";
+import product_type from "./ProductType";
 
 
 const sellerType = new GraphQLObjectType({
@@ -12,7 +12,7 @@ const sellerType = new GraphQLObjectType({
   fields: {
     firstname: {
       type: GraphQLString,
-      description:"Name of the seller"
+      description:"Firstname of the seller"
     },
     lastname: {
       type: GraphQLString

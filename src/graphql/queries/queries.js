@@ -1,5 +1,5 @@
 import { GraphQLObjectType} from "graphql";
-import {seller,sellers} from './seller_queries';
+import {seller,sellers} from './SellerQueries';
 
 const queries = new GraphQLObjectType({
   name: "Query",

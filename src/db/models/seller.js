@@ -1,5 +1,5 @@
 import mongoose, { Schema } from "mongoose";
-import product from "../models/product";
+import product from "./Product";
 import uuid from  'uuid';
 
 const seller = new Schema({

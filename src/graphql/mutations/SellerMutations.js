@@ -1,7 +1,7 @@
 import { GraphQLNonNull, GraphQLString } from "graphql";
-import sellerType from "../types/seller_type";
-import sellerInputType from "../input_types/seller_input_type";
-import { createSeller, deleteSeller } from "../../services/seller_service";
+import sellerType from "../types/SellerType";
+import sellerInputType from "../inputTypes/SellerInputTypes";
+import { createSeller, deleteSeller } from "../../Repositories/SellerRepository";
 
 const createSellerMutation = {
   type: sellerType,

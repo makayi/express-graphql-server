@@ -1,5 +1,5 @@
 {
-    "environment": "dev",
-     "database_URL":"mongodb://localhost:27017/test",
-     "port":"4000"
+  "environment": "dev",
+  "database_URL": "mongodb://localhost:27017/test",
+  "port": "4000"
 }

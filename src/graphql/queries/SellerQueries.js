@@ -1,6 +1,6 @@
 import {GraphQLInt, GraphQLList} from "graphql";
-import {getSellers} from '../../services/seller_service'
-import sellerType from "../types/seller_type";
+import {getSellers} from '../../Repositories/SellerRepository'
+import sellerType from "../types/SellerType";
 
 const  sellers={
     type:  new GraphQLList(sellerType),
