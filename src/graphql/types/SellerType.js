@@ -4,14 +4,15 @@ import {
   GraphQLList,
   GraphQLScalarType
 } from "graphql";
-import product_type from "./product_type";
+import product_type from "./ProductType";
 
 
 const sellerType = new GraphQLObjectType({
   name: "seller",
   fields: {
     firstname: {
-      type: GraphQLString
+      type: GraphQLString,
+      description:"Firstname of the seller"
     },
     lastname: {
       type: GraphQLString
@@ -24,6 +25,9 @@ const sellerType = new GraphQLObjectType({
     },
     seller_id:{
       type: GraphQLString
+    },
+    _id:{
+      type:GraphQLString
     }
   }
 });
