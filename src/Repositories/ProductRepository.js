@@ -1,7 +1,6 @@
 import Product from "../db/models/Product";
 
 export async function addProduct(input) {
-    console.log(input)
   try {
     const product = new Product(input);
     return await product.save();
