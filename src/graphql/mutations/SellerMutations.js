@@ -1,14 +1,13 @@
 import { GraphQLNonNull, GraphQLString } from "graphql";
 import sellerType from "../types/SellerType";
 import sellerInputType from "../inputTypes/SellerInputTypes";
-import { createSeller, deleteSeller } from "../../Repositories/SellerRepository";
+import { createSeller, deleteSeller } from "../../repositories/SellerRepository";
 
 const createSellerMutation = {
   type: sellerType,
   args: {
     input: {
-      type: new GraphQLNonNull(sellerInputType),
-      description: "Hehe"
+      type: new GraphQLNonNull(sellerInputType)
     }
   },
   resolve: async (source, seller) => {

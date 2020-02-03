@@ -1,5 +1,5 @@
 import {GraphQLInt, GraphQLList} from "graphql";
-import {getSellers} from '../../Repositories/SellerRepository'
+import {getSellers} from '../../repositories/SellerRepository'
 import sellerType from "../types/SellerType";
 
 const  sellers={
