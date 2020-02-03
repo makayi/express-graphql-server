@@ -1,4 +1,4 @@
-import Product from "../db/models/Product";
+import Product from "../database/models/Product";
 
 export async function addProduct(input) {
   try {
