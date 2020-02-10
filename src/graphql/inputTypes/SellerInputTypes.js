@@ -1,9 +1,6 @@
 import {
   GraphQLInputObjectType,
-  GraphQLInt,
-  GraphQLList,
-  GraphQLString,
-  GraphQLScalarType
+  GraphQLString
 } from "graphql";
 
 const sellerInputType= new GraphQLInputObjectType({
