@@ -25,17 +25,16 @@ export async function deleteSeller({ _id }) {
   }
 }
 
-export  async function updateSeller({_id,updatedSeller}){
-  console.log(_id)
-  console.log(updatedSeller)
- try {
-   const response= await Seller.updateOne({_id:_id},updatedSeller,{runValidators:true}).exec();
-   if(response.n>0 && response.nModified>0){
-     return updatedSeller;
-   }
-   console.log(response)
-   return response;
- } catch (error) {
-   throw error
- }
+export async function updateSeller({ _id, updatedSeller }) {
+  try {
+    const response = await Seller.updateOne({ _id: _id }, updatedSeller, {
+      runValidators: true
+    }).exec();
+    if (response.n > 0 && response.nModified > 0) {
+      return updatedSeller;
+    }
+    return response;
+  } catch (error) {
+    throw error;
+  }
 }
