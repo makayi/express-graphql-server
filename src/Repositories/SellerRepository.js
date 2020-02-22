@@ -1,4 +1,4 @@
-import Seller from "../db/models/Seller";
+import Seller from "../database/models/Seller";
 
 export async function getSellers() {
   try {
@@ -20,6 +20,20 @@ export async function createSeller(input) {
 export async function deleteSeller({ _id }) {
   try {
     return await Seller.findOneAndDelete({ _id: _id }).exec();
+  } catch (error) {
+    throw error;
+  }
+}
+
+export async function updateSeller({ _id, updatedSeller }) {
+  try {
+    const response = await Seller.updateOne({ _id: _id }, updatedSeller, {
+      runValidators: true
+    }).exec();
+    if (response.n > 0 && response.nModified > 0) {
+      return updatedSeller;
+    }
+    return response;
   } catch (error) {
     throw error;
   }
