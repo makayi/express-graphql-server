@@ -25,15 +25,13 @@ export async function getProducts() {
   }
 }
 
-
 export async function getSellerProducts(id) {
-    try {
-      return await Product.find({_id:id}).exec();
-    } catch (error) {
-      throw error;
-    }
+  try {
+    return await Product.find({ _id: id }).exec();
+  } catch (error) {
+    throw error;
   }
-  
+}
 
 export async function updateProduct(params) {
   try {

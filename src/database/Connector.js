@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
-import config from 'config';
+import config from "config";
 
-
-mongoose.connect(config.get('database_URL'), {
+mongoose.connect(config.get("database_URL"), {
   useNewUrlParser: true
 });
 

@@ -24,3 +24,17 @@ export async function deleteSeller({ _id }) {
     throw error;
   }
 }
+
+export async function updateSeller({ _id, updatedSeller }) {
+  try {
+    const response = await Seller.updateOne({ _id: _id }, updatedSeller, {
+      runValidators: true
+    }).exec();
+    if (response.n > 0 && response.nModified > 0) {
+      return updatedSeller;
+    }
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
