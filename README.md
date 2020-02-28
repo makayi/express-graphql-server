@@ -11,7 +11,7 @@ This is a pet project I have been working on to understand how GraphQL works wit
 2. Run ``npm run dev or yarn run dev`` to run in development mode with nodemon
 3. Run `` npm run test   `` to run tests with mocha.
 4. Run `` npm  run build `` to build the project 
-5. Run `` npm run server `` to run in production mode after build.
+5. Run `` npm run serve `` to run in production mode after build.
 
 ## Docker Image
 If you want to run this as docker app run
